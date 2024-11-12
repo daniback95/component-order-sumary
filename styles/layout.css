@@ -1,11 +1,14 @@
-.main-container{
+body {
   min-height: 100vh;
-  padding: 4.375rem 1.5625rem;
   font-family: 'Red Hat Display';
   background-image: url(../images/pattern-background-mobile.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-color: var(--pale-blue);
+}
+
+.main-container{
+  padding: 4.375rem 1.5625rem;
 }
 
 .card {
@@ -96,14 +99,34 @@
   background-color: transparent;
 }
 
+.footer-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: .5rem;
+  padding-block: .5rem;
+}
+
+.footer-author {
+  color: var(--dark-blue);
+  font-size: 14px;
+}
+
+.footer-author > a {
+  color: inherit;
+}
+
 .shadow {
   box-shadow: 0 1.75rem 0.75rem hsl(245, 75%, 52%, 10%);
 }
 
 @media screen and (width >= 48rem) {
+  body {
+    background-image: url(../images/pattern-background-desktop.svg);
+  }
+
   .main-container {
     padding-block: 100px;
-    background-image: url(../images/pattern-background-desktop.svg);
   }
 
   .card__info {
@@ -137,5 +160,11 @@
 
   .button--secondary:hover {
     color: var(--dark-blue);
+  }
+
+  .footer-page {
+    flex-direction: initial;
+    justify-content: center;
+    padding-block: 1rem;
   }
 }
